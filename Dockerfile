@@ -3,6 +3,7 @@ FROM rocker/shiny:latest
 
 ## Install debian packages
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
+    libsodium-dev \
     libxml2-dev \
     libssl-dev \
     libudunits2-dev
