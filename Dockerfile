@@ -19,10 +19,3 @@ COPY /renv.lock /renv.lock
 # Install renv & restore packages
 RUN Rscript -e 'install.packages("renv")'
 RUN Rscript -e 'renv::restore()'
-
-
-# Expose port
-EXPOSE 3838
-
-# Run app on container start
-CMD ["R", "-e", "shiny::runApp('app.R', host = '0.0.0.0', port = 3838)"]
